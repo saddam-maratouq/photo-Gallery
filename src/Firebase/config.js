@@ -1,9 +1,10 @@
 // To connect our App with backend firebase 
 
+import firebase from 'firebase/compat/app';  
 
-import * as firebase from 'firebase/app'
-import  'firebase/firestore'
-import 'firebase/storage'
+import 'firebase/compat/firestore'; 
+
+import 'firebase/compat/storage'
 
 // Your web app's Firebase configuration
  const firebaseConfig = {
@@ -15,11 +16,18 @@ import 'firebase/storage'
     appId: "1:645585633477:web:6b9e95b793828b1cccf0ac"
   };
 
-  // Initialize Firebase
-   firebase.initializeApp(firebaseConfig);
+  // Initialize Firebase 
 
-   const projectStorge = firebase.storage();
+ 
+    firebase.initializeApp(firebaseConfig)  
+ 
+
+
+   const projectStorge = firebase.storage(); 
+   
    const projectFirestore = firebase.firestore();
 
 
-   export { projectStorge, projectFirestore }
+   export { projectStorge, projectFirestore } 
+
+

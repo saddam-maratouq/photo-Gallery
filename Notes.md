@@ -4,11 +4,27 @@
 
 2- npm i fire base then creat a config file inside fire base folder 
 
-3- paste the script inside config file then write this line to catch the service from fire base 
+3- paste the script inside config file then write this line to catch the services  from firebase 
 
-import * as firebase from 'firebase/app'
+import * as firebase from 'firebase/app' //before  **important** in new vervison of firebase this rule of 3 line changed ....
+   
+    // before version 9 
+
+import firebase from 'firebase/app' 
+
 import  'firebase/firestore'
-import 'firebase/storage'  
+
+import 'firebase/storage'   
+
+
+// After version 9 
+
+import firebase from 'firebase/compat/app';  
+
+import 'firebase/compat/firestore'; 
+
+import 'firebase/compat/storage' 
+
 
 ---
 
@@ -41,4 +57,8 @@ const types =["image/jpeg","image/png"]
 
 .type inside the file type from selcted 
 
-if the same string includes back true anything else back false 
+if the same string includes back true anything else back false  
+
+
+
+

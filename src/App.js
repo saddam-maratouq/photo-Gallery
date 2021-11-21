@@ -8,9 +8,14 @@ import UploedForm from './component/UploedForm'
 
 const App = () => {
   return (
-    <div className='App'>
-     <Title/> 
-     <UploedForm/>
+    <div className='App'> 
+
+     <Title/>  
+
+     <UploedForm/>  
+
+    
+
     </div>
   )
 }
