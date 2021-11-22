@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'; 
 
-import { projectStorge , projectFirestore , timestamp} from '../Firebase/config' 
+import { projectStorge} from '../Firebase/config' 
 
 
 
@@ -10,12 +10,12 @@ const useStorage = (file) => {
   const [url, setUrl] = useState(null);
 
   useEffect(() => {
-    // references 
+    // references       
 
     const storageRef = projectStorge.ref(file.name);
-    const collectionRef = projectFirestore.collection('images'); // methode .collection
     
-    storageRef.put(file).on('state_changed', (snap) => { //snap obj  && put on methode query 
+    
+    storageRef.put(file).on('state_changed', (snap) => { //snap obj 
 
       let percentage = (snap.bytesTransferred / snap.totalBytes) * 100; 
       setProgress(percentage);
@@ -24,9 +24,7 @@ const useStorage = (file) => {
       setError(err);
       
     }, async () => {
-      const url = await storageRef.getDownloadURL(); // getDowloadURL methode inside firebase aysnc 
-      const createdAt = timestamp(); 
-      collectionRef.add({ url, createdAt })
+      const url = await storageRef.getDownloadURL(); // getDowloadURL methode inside firebase aysnc  
       setUrl(url); 
     }); 
     

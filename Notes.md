@@ -61,4 +61,32 @@ if the same string includes back true anything else back false
 
 
 
+/// add collections (documendt and real time ) to data base steps in this project ' there is no auth in this project ' 
+
+to render the image we need the Database and url to showen this image .... 
+
+1- import projectFirestore from config  to the custom hook (useStorge)
+
+2- creat a Ref to collections to save
+
+ **const collectionRef = projectFirestore.collection('images')** 
+
+ .collection() is am methode  
+
+ 3- then add collectionRef to the aysenc 
+
+ **collectionRef.add({ url, createdAt })**  
+
+ 4- if yo want to creat time stamp not sure yet why .. !! 
+
+ add this line to config  
+
+ const timestamp = firebase.firestore.FieldValue.serverTimestamp;
+ 
+ then dont forget export it  { timestamp } .... 
+
+ const createdAd = timestamp();  to add time and url to the coolection step 3 .... 
+
+
+
 

@@ -25,9 +25,12 @@ import 'firebase/compat/storage'
 
    const projectStorge = firebase.storage(); 
    
-   const projectFirestore = firebase.firestore();
+   const projectFirestore = firebase.firestore(); 
+
+   const timestamp = firebase.firestore.FieldValue.serverTimestamp; // timestamp return a function 
 
 
-   export { projectStorge, projectFirestore } 
 
+   export { projectStorge, projectFirestore ,timestamp } 
 
+   
