@@ -29,4 +29,4 @@ const  Progress =({file,setFile}) =>  {
     )
 }
 
-export default  Progress  ;
+export default  Progress  ; 
